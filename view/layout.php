@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>NEWSPORTAL</title>
+        
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link href="https://fonts.googleapis.com/css?family=Noto+Serif" rel="stylesheet">
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg">
+            <ul class="topnav">
+                <li><a href="#">Kategooriad<i class="fa fa-angle-down"></i></a>
+                    <ul class="subnav">
+                        <?php
+                            Controller::AllCategory();
+                        ?>
+                    </ul>
+                </li>
+                <li><a href="testError">Info</a></li>
+                <li><a href="./">Stardileht</a></li>
+            </ul>
+        </nav>
+        <div class="divBox">
+            <?php
+            if(isset($content)){
+                echo $content;
+            }
+            else{
+                echo '<h1>Hooppis muu lehekülg</h1>';
+            }
+            ?>
+        </div>
+        <hr>
+        <p style="display: block; text-align: center;">JPTV24 &copy;</p>
+    </body>
+</html>
